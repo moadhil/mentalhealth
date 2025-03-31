@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Mental Health Awareness Hub</title>
+    <link rel="stylesheet" href="styles/Style.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="understanding.html">Understanding Mental Health</a> |
+            <a href="resources.html">Resources</a> |
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <p>We are here to help. If you have any questions, concerns, or need support, please reach out to us.</p>
+            <img src="images/contact_us.avif" alt="Contact Us" 
+             style="width:100%; max-width:600px; display:block; margin:20px auto;">
+
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+
+        <section>
+            <h2>Find a Mental Health Support Center Near You</h2>
+            <p>Below is a map showing the Sligo Mental Health Support Center.</p>
+            <div id="map" style="width: 100%; height: 400px; margin-top: 20px;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mental Health Awareness Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    <script>
+        function initMap() {
+            var mentalHealthCenter = { lat: 54.2723, lng: -8.4750 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: mentalHealthCenter
+            });
+
+            var marker = new google.maps.Marker({
+                position: mentalHealthCenter,
+                map: map,
+                title: 'Sligo Mental Health Support Center'
+            });
+        }
+    </script>
+</body>
+</html>
